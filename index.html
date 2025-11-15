@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Clock Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+    
+    <header class="top-bar glass">
+        <h1>Smart Clock Dashboard</h1>
+        <button id="toggleTheme" class="theme-btn">Switch to Light Mode</button>
+    </header>
+
+   
+    <nav class="tabs glass">
+        <button class="tab active" data-target="clock-section">Clock</button>
+        <button class="tab" data-target="alarm-section">Alarm</button>
+        <button class="tab" data-target="stopwatch-section">Stopwatch</button>
+        <button class="tab" data-target="timer-section">Timer</button>
+        <button class="tab" data-target="world-section">World Clock</button>
+        <button class="tab" data-target="weather-section">Weather</button>
+    </nav>
+
+    
+    <main class="content">
+
+        
+        <div id="clock-section" class="section active glass card">
+            <h1 id="time" class="time-text">00:00:00</h1>
+            <p id="date" class="sub"></p>
+            <p id="greeting" class="sub"></p>
+
+            <div class="btn-row">
+                <button id="toggleFormat">Switch to 24-Hour</button>
+                <button id="fullScreenBtn">Fullscreen</button>
+            </div>
+        </div>
+
+       
+        <div id="alarm-section" class="section glass card">
+            <h2>Alarm</h2>
+            <div class="input-row">
+                <input type="time" id="alarmTime">
+                <button id="setAlarmBtn">Add Alarm</button>
+            </div>
+            <ul id="alarmList"></ul>
+        </div>
+
+        
+        <div id="stopwatch-section" class="section glass card">
+            <h2>Stopwatch</h2>
+            <h1 id="stopwatchDisplay" class="time-text">00:00:00</h1>
+            <div class="btn-row">
+                <button id="swStart">Start</button>
+                <button id="swStop">Stop</button>
+                <button id="swReset">Reset</button>
+            </div>
+            <h3>Laps</h3>
+            <ul id="lapList"></ul>
+        </div>
+
+        
+        <div id="timer-section" class="section glass card">
+            <h2>Timer</h2>
+            <div class="timer-inputs">
+                <input type="number" id="timerMinutes" placeholder="Minutes">
+                <input type="number" id="timerSeconds" placeholder="Seconds">
+            </div>
+            <h1 id="timerDisplay" class="time-text">00:00</h1>
+            <div class="btn-row">
+                <button id="timerStart">Start</button>
+                <button id="timerPause">Pause</button>
+                <button id="timerReset">Reset</button>
+            </div>
+        </div>
+
+        
+        <div id="world-section" class="section glass card">
+            <h2>World Clock</h2>
+            <div class="world-grid">
+                <div class="world-item"><p>New York</p><h3 id="nyTime"></h3></div>
+                <div class="world-item"><p>London</p><h3 id="lonTime"></h3></div>
+                <div class="world-item"><p>Dubai</p><h3 id="dubaiTime"></h3></div>
+                <div class="world-item"><p>Tokyo</p><h3 id="tokyoTime"></h3></div>
+                <div class="world-item"><p>Sydney</p><h3 id="sydneyTime"></h3></div>
+            </div>
+        </div>
+
+        
+        <div id="weather-section" class="section glass card">
+            <h2>Weather</h2>
+            <div class="input-row">
+                <input id="cityInput" type="text" placeholder="Enter city name">
+                <button id="getWeatherBtn">Search</button>
+            </div>
+            <div id="weatherResult"></div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
